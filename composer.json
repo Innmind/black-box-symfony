@@ -1,0 +1,35 @@
+{
+    "name": "innmind/black-box-symfony",
+    "type": "library",
+    "description": "Extension to test Symfony apps via BlackBox",
+    "keywords": ["testing", "symfony"],
+    "homepage": "http://github.com/innmind/black-box-symfony",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baptiste Langlade",
+            "email": "baptiste.langlade@hey.com"
+        }
+    ],
+    "support": {
+        "issues": "http://github.com/innmind/black-box-symfony/issues"
+    },
+    "require": {
+        "php": "~8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Innmind\\BlackBox\\Symfony\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Innmind\\BlackBox\\Symfony\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "vimeo/psalm": "~5.13",
+        "innmind/black-box": "~5.0",
+        "innmind/coding-standard": "~2.0"
+    }
+}
