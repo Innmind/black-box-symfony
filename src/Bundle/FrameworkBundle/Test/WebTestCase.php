@@ -14,12 +14,13 @@ abstract class WebTestCase extends TestCase
 {
     protected static ?KernelInterface $kernel = null;
     protected static bool $booted = false;
-    protected static ?KernelBrowser $_client = null;
 
     protected function tearDown(): void
     {
         parent::tearDown();
         self::ensureKernelShutdown();
+        self::$kernel = null;
+        self::$booted = false;
     }
 
     protected static function bootKernel(): KernelInterface
@@ -62,19 +63,14 @@ abstract class WebTestCase extends TestCase
             if ($container instanceof ResetInterface) {
                 $container->reset();
             }
+
+            self::$kernel = null;
         }
     }
 
     protected static function createClient(): KernelBrowser
     {
-        if (self::$_client) {
-            return self::$_client;
-        }
-
-        $kernel = self::bootKernel();
         /** @var KernelBrowser */
-        self::$_client = $kernel->getContainer()->get('test.client');
-
-        return self::$_client;
+        return self::bootKernel()->getContainer()->get('test.client');
     }
 }
