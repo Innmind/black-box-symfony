@@ -20,6 +20,8 @@ abstract class WebTestCase extends TestCase
     {
         parent::tearDown();
         self::ensureKernelShutdown();
+        self::$kernel = null;
+        self::$booted = false;
     }
 
     protected static function bootKernel(): KernelInterface
@@ -62,6 +64,8 @@ abstract class WebTestCase extends TestCase
             if ($container instanceof ResetInterface) {
                 $container->reset();
             }
+
+            self::$kernel = null;
         }
     }
 
