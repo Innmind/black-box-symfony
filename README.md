@@ -140,3 +140,9 @@ return static function() {
     );
 }
 ```
+
+### PHPUnit emulation
+
+BlackBox is able to run PHPUnit tests and this extension allows to run functional tests. For this to work you only need to prefix the `Symfony\Bundle\FrameworkBundle\Test\WebTestCase` by `Innmind\BlackBox\`.
+
+**Warning**: custom assertions provided by Symfony are not supported.
