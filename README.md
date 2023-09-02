@@ -145,4 +145,25 @@ return static function() {
 
 BlackBox is able to run PHPUnit tests and this extension allows to run functional tests. For this to work you only need to prefix the `Symfony\Bundle\FrameworkBundle\Test\WebTestCase` by `Innmind\BlackBox\`.
 
+And the file to run BlackBox would look like:
+
+```php
+<?php
+declare(strict_types = 1);
+
+require 'vendor/autoload.php';
+
+use Innmind\BlackBox\Application;
+use Innmind\BlackBox\PHPUnit\Load;
+use Symfony\Component\Dotenv\Dotenv;
+
+(new Dotenv())->bootEnv('.env', 'test');
+
+Application::new($argv)
+    ->disableMemoryLimit()
+    ->scenariiPerProof(1)
+    ->tryToProve(Load::directory('tests/'))
+    ->exit();
+```
+
 **Warning**: custom assertions provided by Symfony are not supported.
