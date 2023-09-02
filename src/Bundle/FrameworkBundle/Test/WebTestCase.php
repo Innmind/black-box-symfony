@@ -14,7 +14,6 @@ abstract class WebTestCase extends TestCase
 {
     protected static ?KernelInterface $kernel = null;
     protected static bool $booted = false;
-    protected static ?KernelBrowser $_client = null;
 
     protected function tearDown(): void
     {
@@ -71,14 +70,7 @@ abstract class WebTestCase extends TestCase
 
     protected static function createClient(): KernelBrowser
     {
-        if (self::$_client) {
-            return self::$_client;
-        }
-
-        $kernel = self::bootKernel();
         /** @var KernelBrowser */
-        self::$_client = $kernel->getContainer()->get('test.client');
-
-        return self::$_client;
+        return self::bootKernel()->getContainer()->get('test.client');
     }
 }
