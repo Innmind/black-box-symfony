@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0 - 2023-12-02
+
+### Added
+
+- Support for `symfony/framework-bundle:~7.0`
+- Support for `symfony/browser-kit:~7.0`
+- Support for `symfony/http-foundation:~7.0`
+- Support for `symfony/http-kernel:~7.0`
+
 ## 1.1.1 - 2023-09-02
 
 ### Fixed
