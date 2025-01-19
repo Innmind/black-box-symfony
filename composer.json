@@ -17,6 +17,7 @@
     "require": {
         "php": "~8.2",
         "innmind/black-box": "~5.3",
+        "innmind/json": "~1.4",
         "symfony/framework-bundle": "~6.0|~7.0",
         "symfony/browser-kit": "~6.0|~7.0",
         "symfony/http-foundation": "~6.0|~7.0",
@@ -34,7 +35,7 @@
         }
     },
     "require-dev": {
-        "vimeo/psalm": "~5.13",
+        "vimeo/psalm": "~5.13|dev-master",
         "innmind/coding-standard": "~2.0"
     },
     "provide": {
