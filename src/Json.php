@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Innmind\BlackBox\Symfony;
 
+use Innmind\Json\Json as Encoding;
+
 final class Json
 {
     private Application $app;
@@ -76,7 +78,7 @@ final class Json
             $headers,
             match ($data) {
                 null => '',
-                default => \json_encode($data),
+                default => Encoding::encode($data),
             },
         );
     }
