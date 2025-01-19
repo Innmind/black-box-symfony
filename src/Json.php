@@ -26,7 +26,7 @@ final class Json
     private function post(
         string $uri,
         array $headers = [],
-        array $data = null,
+        ?array $data = null,
     ): Response {
         return $this->request('POST', $uri, $data, $headers);
     }
@@ -37,7 +37,7 @@ final class Json
     private function put(
         string $uri,
         array $headers = [],
-        array $data = null,
+        ?array $data = null,
     ): Response {
         return $this->request('PUT', $uri, $data, $headers);
     }
@@ -48,7 +48,7 @@ final class Json
     private function delete(
         string $uri,
         array $headers = [],
-        array $data = null,
+        ?array $data = null,
     ): Response {
         return $this->request('DELETE', $uri, $data, $headers);
     }
@@ -60,7 +60,7 @@ final class Json
     private function request(
         string $method,
         string $uri,
-        array $data = null,
+        ?array $data = null,
         array $headers = [],
     ): Response {
         $headers = \array_merge(
