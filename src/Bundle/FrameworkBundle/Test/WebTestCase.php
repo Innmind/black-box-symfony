@@ -15,6 +15,7 @@ abstract class WebTestCase extends TestCase
     protected static ?KernelInterface $kernel = null;
     protected static bool $booted = false;
 
+    #[\Override]
     protected function tearDown(): void
     {
         parent::tearDown();
