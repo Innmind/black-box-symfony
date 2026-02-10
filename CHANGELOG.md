@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Support for Symfony `8`
+
 ## 1.2.1 - 2025-01-19
 
 ### Fixed
